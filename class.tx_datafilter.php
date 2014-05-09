@@ -324,7 +324,7 @@ class tx_datafilter extends tx_tesseract_filterbase {
 	 *
 	 * @param	string	$maxConfiguration: definition of the maximum number of records to display at a time
 	 * @param	string	$offsetConfiguration: definition of the offset, as a multiplier of $max
-	 * @param	string	$pointerConfiguration: definintion of the direct pointer to a specific item
+	 * @param	string	$pointerConfiguration: definition of the direct pointer to a specific item
 	 * @return	void
 	 */
 	protected function defineLimit($maxConfiguration, $offsetConfiguration, $pointerConfiguration) {
