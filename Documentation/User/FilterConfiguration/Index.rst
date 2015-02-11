@@ -164,6 +164,10 @@ end
   word. This means the Data Provider is expected to prepend a wildcard
   to the value.
 
+fulltext and fulltext_natural
+  The given string will be used in a fulltext search. Not all Data Providers
+  support fulltext search and setting one up requires several steps.
+  Refer to the :ref:`Data Query manual for more details <dataquery:queries-fulltext>`.
 
 .. _user-filter-configuration-values:
 

@@ -1,6 +1,7 @@
 2015-02-11 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Moved documentation to reStructuredText, resolves #65003
+	* Added note about fulltext operators, resolves #65007
 
 2014-05-09 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
