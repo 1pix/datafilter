@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2008-2010 Francois Suter (Cobweb) <typo3@cobweb.ch>
+*  (c) 2008-2015 Francois Suter (Cobweb) <typo3@cobweb.ch>
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,8 +28,6 @@
  * @author		Francois Suter (Cobweb) <typo3@cobweb.ch>
  * @package		TYPO3
  * @subpackage	tx_datafilter
- *
- * $Id$
  */
 class tx_datafilter extends tx_tesseract_filterbase {
 
@@ -469,7 +467,7 @@ class tx_datafilter extends tx_tesseract_filterbase {
 			if (count($parseErrors) > 0) {
 				$this->controller->addMessage(
 					'datafilter',
-					'<ul><li>' . implode('</li><li>', $parseErrors) . '</li></ul>',
+					implode("\n", $parseErrors),
 					'Invalid configuration items for ordering',
 					t3lib_FlashMessage::WARNING
 				);

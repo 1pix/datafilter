@@ -1,3 +1,7 @@
+2015-02-27 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Corrected rendering of error message, resolves #65407
+
 2015-02-11 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Moved documentation to reStructuredText, resolves #65003
