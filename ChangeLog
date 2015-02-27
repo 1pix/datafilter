@@ -1,6 +1,7 @@
 2015-02-27 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Corrected rendering of error message, resolves #65407
+	* Released to TER as version 1.8.2, resolves #65408
 
 2015-02-11 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
