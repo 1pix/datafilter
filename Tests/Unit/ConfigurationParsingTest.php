@@ -1,43 +1,41 @@
 <?php
-/***************************************************************
-*  Copyright notice
-*
-*  (c) 2010-2012 Francois Suter <typo3@cobweb.ch>
-*  All rights reserved
-*
-*  This script is part of the TYPO3 project. The TYPO3 project is
-*  free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 2 of the License, or
-*  (at your option) any later version.
-*
-*  The GNU General Public License can be found at
-*  http://www.gnu.org/copyleft/gpl.html.
-*
-*  This script is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  This copyright notice MUST APPEAR in all copies of the script!
-***************************************************************/
+namespace Cobweb\Context\Tests\Unit;
 
 /**
- * Testcase for the Data Query SQL parser
+ * This file is part of the TYPO3 CMS project.
  *
- * @author		Francois Suter <typo3@cobweb.ch>
- * @package		TYPO3
- * @subpackage	tx_datafilter
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
  *
- * $Id$
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
  */
-class tx_datafilter_configuration_Test extends tx_phpunit_testcase {
+
+use TYPO3\CMS\Core\Tests\UnitTestCase;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+/**
+ * Testcase for parsing filter configurations
+ *
+ * @author Francois Suter <typo3@cobweb.ch>
+ * @package TYPO3
+ * @subpackage tx_datafilter
+ */
+class ConfigurationParsingTest extends UnitTestCase {
+	/**
+	 * Forces some GET variables for testing.
+	 *
+	 * @return void
+	 */
 	public function setUp() {
 		$_GET['tx_choice'] = array('foo', 'bar');
 	}
 
 	/**
-	 * Provides configurations and the expected result for testing filters
+	 * Provides configurations and the expected result for testing filters.
 	 *
 	 * @return array
 	 */
@@ -324,12 +322,12 @@ class tx_datafilter_configuration_Test extends tx_phpunit_testcase {
 					)
 				),
 			),
-				// Ordering configuration with errors or some weirdness:
-				// - first line is skipped because we don't have a "field" yet
-				// - empty line after field is removed entirely
-				// - so is line with comment
-				// - second ordering for first field overrides first ordering
-				// - engine value for the second field is invalid
+			// Ordering configuration with errors or some weirdness:
+			// - first line is skipped because we don't have a "field" yet
+			// - empty line after field is removed entirely
+			// - so is line with comment
+			// - second ordering for first field overrides first ordering
+			// - engine value for the second field is invalid
 			'ordering (unusual or bad configuration)' => array(
 				'definition' => array(
 					'configuration' => '',
@@ -425,7 +423,7 @@ class tx_datafilter_configuration_Test extends tx_phpunit_testcase {
 	}
 
 	/**
-	 * Test the parsing various filters
+	 * Tests the parsing of various filters.
 	 *
 	 * @param string $definition The raw filter definition
 	 * @param array $result The expected structure of the parsed filter
@@ -433,15 +431,14 @@ class tx_datafilter_configuration_Test extends tx_phpunit_testcase {
 	 * @dataProvider configurationProvider
 	 */
 	public function testFilters($definition, $result) {
-		/** @var tx_datafilter	$filterObject */
-		$filterObject = t3lib_div::makeInstance('tx_datafilter');
-		/** @var $controller tx_tesseract_picontrollerbase */
-		$controller = $this->getMock('tx_tesseract_picontrollerbase');
+		/** @var \Tesseract\Datafilter\Component\DataFilter	$filterObject */
+		$filterObject = GeneralUtility::makeInstance('Tesseract\\Datafilter\\Component\\DataFilter');
+		/** @var $controller \Tesseract\Tesseract\Frontend\PluginControllerBase */
+		$controller = $this->getMock('Tesseract\\Tesseract\\Frontend\\PluginControllerBase');
 		$filterObject->setController($controller);
 		$filterObject->setData($definition);
 		$actualResult = $filterObject->getFilterStructure();
-			// Check if the "structure" part if correct
+		// Check if the "structure" part if correct
 		$this->assertEquals($result, $actualResult);
 	}
 }
-?>
