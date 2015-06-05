@@ -24,10 +24,10 @@ order must be defined for each sorting criterion, plus an optional
    engine = source
 
 In this case the name of the field to use for ordering will be fetched
-from variable :code:`tx\_specialsearch\_pi1[sort]`. If not defined,
+from variable :code:`tx_specialsearch_pi1[sort]`. If not defined,
 the default search will use the "name" field from the "items" table.
 The sorting order will be fetched from variable
-:code:`tx\_specialsearch\_pi1[order]`. There are no restrictions on
+:code:`tx_specialsearch_pi1[order]`. There are no restrictions on
 the values of the order property. It is up to the Data Provider to
 implement whatever is meaningful for itself, and default to some
 appropriate ordering if the values provided by the filter are not

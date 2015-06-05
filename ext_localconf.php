@@ -5,24 +5,25 @@ if (!defined ('TYPO3_MODE')) {
 
 // Register as Data Provider service
 // Note that the subtype corresponds to the name of the database table
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
+	'datafilter',
+	// Service type
+	'datafilter',
+	// Service key
+	'tx_datafilter',
+	array(
+		'title' => 'Data Filter',
+		'description' => 'Standard Data Filter',
 
-t3lib_extMgm::addService($_EXTKEY,  'datafilter' /* sv type */,  'tx_datafilter' /* sv key */,
-		array(
+		'subtype' => 'tx_datafilter_filters',
 
-			'title' => 'Data Filter',
-			'description' => 'Standard Data Filter',
+		'available' => TRUE,
+		'priority' => 50,
+		'quality' => 50,
 
-			'subtype' => 'tx_datafilter_filters',
+		'os' => '',
+		'exec' => '',
 
-			'available' => TRUE,
-			'priority' => 50,
-			'quality' => 50,
-
-			'os' => '',
-			'exec' => '',
-
-			'classFile' => t3lib_extMgm::extPath($_EXTKEY, 'class.tx_datafilter.php'),
-			'className' => 'tx_datafilter',
-		)
-	);
-?>
+		'className' => 'Tesseract\\Datafilter\\Component\\DataFilter',
+	)
+);

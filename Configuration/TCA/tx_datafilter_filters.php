@@ -1,13 +1,27 @@
 <?php
-// $Id$ //
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
-$GLOBALS['TCA']['tx_datafilter_filters'] = array (
-	'ctrl' => $GLOBALS['TCA']['tx_datafilter_filters']['ctrl'],
-	'interface' => array (
-		'showRecordFieldList' => 'hidden,title,configuration,additional_sql'
+return array (
+	'ctrl' => array (
+		'title'     => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters',
+		'label'     => 'title',
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => 'ORDER BY title',
+		'delete' => 'deleted',
+		'enablecolumns' => array (
+			'disabled' => 'hidden',
+		),
+		'searchFields' => 'title,configuration,orderby',
+		'dividers2tabs' => TRUE,
+		'typeicon_classes' => array(
+			'default' => 'extensions-datafilter-filter'
+		),
 	),
-	'feInterface' => $GLOBALS['TCA']['tx_datafilter_filters']['feInterface'],
+	'interface' => array (
+		'showRecordFieldList' => 'hidden,title,configuration'
+	),
 	'columns' => array (
 		'hidden' => array (
 			'exclude' => 1,
@@ -111,4 +125,3 @@ $GLOBALS['TCA']['tx_datafilter_filters'] = array (
 		'3' => array('showitem' => 'key_per_page'),
 	)
 );
-?>
