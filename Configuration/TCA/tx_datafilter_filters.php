@@ -3,10 +3,11 @@ if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
 return array (
 	'ctrl' => array (
-		'title'     => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters',
-		'label'     => 'title',
-		'tstamp'    => 'tstamp',
-		'crdate'    => 'crdate',
+		'title' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters',
+		'label' => 'title',
+		'descriptionColumn' => 'description',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY title',
 		'delete' => 'deleted',
@@ -25,9 +26,9 @@ return array (
 	'columns' => array (
 		'hidden' => array (
 			'exclude' => 1,
-			'label'   => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
-			'config'  => array (
-				'type'    => 'check',
+			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+			'config' => array (
+				'type' => 'check',
 				'default' => '0'
 			)
 		),
@@ -38,6 +39,15 @@ return array (
 				'type' => 'input',
 				'size' => '30',
 				'eval' => 'required,trim',
+			)
+		),
+		'description' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.description',
+			'config' => array(
+				'type' => 'text',
+				'cols' => '30',
+				'rows' => '4',
 			)
 		),
 		'configuration' => array (
@@ -117,11 +127,12 @@ return array (
 		),
 	),
 	'types' => array (
-		'0' => array('showitem' => 'hidden;;;;1-1-1, title;;;;2-2-2, configuration;;1;;3-3-3, orderby, --palette--;LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.pagination;2,--div--;LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.session, session_key;;3;;7-7-7')
+		'0' => array('showitem' => 'hidden, title;;4, configuration;;1, orderby, --palette--;LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.pagination;2,--div--;LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.session, session_key;;3')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => 'logical_operator'),
 		'2' => array('showitem' => 'limit_start,--linebreak--,limit_offset,--linebreak--,limit_pointer', 'canNotCollapse' => 1),
 		'3' => array('showitem' => 'key_per_page'),
+		'4' => array('showitem' => 'description')
 	)
 );

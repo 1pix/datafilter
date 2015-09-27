@@ -10,6 +10,7 @@ CREATE TABLE tx_datafilter_filters (
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
 	hidden tinyint(4) DEFAULT '0' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
+	description text,
 	configuration text,
 	logical_operator varchar(3) DEFAULT 'AND' NOT NULL,
 	orderby text,
@@ -18,7 +19,7 @@ CREATE TABLE tx_datafilter_filters (
 	limit_pointer varchar(255) DEFAULT '' NOT NULL,
 	session_key  varchar(50) DEFAULT '' NOT NULL,
 	key_per_page tinyint(4) DEFAULT '0' NOT NULL,
-	
+
 	PRIMARY KEY (uid),
 	KEY parent (pid)
 );
