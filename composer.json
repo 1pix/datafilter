@@ -1,0 +1,15 @@
+{
+	"name": "tesseract/datafilter",
+	"type": "typo3-cms-extension",
+	"description": "Provides a way to create complex filters that can be passed to a Data Provider for restricting the data it returns. More info on http://www.typo3-tesseract.com/",
+	"license": ["GPL-2.0+"],
+	"autoload": {
+		"psr-4": {
+			"Tesseract\\Datafilter\\": "Classes/"
+		}
+	},
+	"replace": {
+		"datafilter": "self.version",
+		"typo3-ter/datafilter": "self.version"
+	}
+}
