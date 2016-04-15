@@ -22,13 +22,14 @@ use Tesseract\Datafilter\Component\DataFilter;
  * @package TYPO3
  * @subpackage tx_datafilter
  */
-interface PostprocessFilterInterface {
-	/**
-	 * This method must be implemented for post-processing a filter
-	 * It receives a reference to the complete filter object
-	 *
-	 * @param DataFilter $filter The filter object
-	 * @return void
-	 */
-	public function postprocessFilter(DataFilter $filter);
+interface PostprocessFilterInterface
+{
+    /**
+     * This method must be implemented for post-processing a filter
+     * It receives a reference to the complete filter object
+     *
+     * @param DataFilter $filter The filter object
+     * @return void
+     */
+    public function postprocessFilter(DataFilter $filter);
 }

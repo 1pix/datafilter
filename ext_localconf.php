@@ -24,6 +24,6 @@ if (!defined ('TYPO3_MODE')) {
 		'os' => '',
 		'exec' => '',
 
-		'className' => 'Tesseract\\Datafilter\\Component\\DataFilter',
+		'className' => \Tesseract\Datafilter\Component\DataFilter::class,
 	)
 );

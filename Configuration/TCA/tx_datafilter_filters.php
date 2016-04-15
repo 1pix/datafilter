@@ -1,5 +1,7 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
 
 return array (
 	'ctrl' => array (
@@ -17,7 +19,7 @@ return array (
 		'searchFields' => 'title,configuration,orderby',
 		'dividers2tabs' => TRUE,
 		'typeicon_classes' => array(
-			'default' => 'extensions-datafilter-filter'
+			'default' => 'tx_datafilter-datafilter'
 		),
 	),
 	'interface' => array (

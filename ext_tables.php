@@ -6,13 +6,14 @@ if (!defined ('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_datafilter_filters');
 
 // Register sprite icon for datafilter table
-$extensionRelativePath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY);
-$icon = array(
-	'filter' => $extensionRelativePath . 'Resources/Public/Icons/DataFilter.png'
-);
-\TYPO3\CMS\Backend\Sprite\SpriteManager::addSingleIcons(
-	$icon,
-	$_EXTKEY
+/** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry->registerIcon(
+        'tx_datafilter-datafilter',
+        \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+        [
+            'source' => 'EXT:datafilter/Resources/Public/Icons/DataFilter.png'
+        ]
 );
 
 // Add context sensitive help (csh) for this table
@@ -29,7 +30,6 @@ $GLOBALS['TCA']['tt_content']['columns']['tx_displaycontroller_datafilter2']['co
 $addDatafilteryWizard = array(
 	'type' => 'script',
 	'title' => 'LLL:EXT:datafilter/locallang_db.xml:wizards.add_datafilter',
-	'script' => 'wizard_add.php',
 	'module' => array(
 		'name' => 'wizard_add'
 	),

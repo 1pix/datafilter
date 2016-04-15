@@ -23,15 +23,16 @@ use Tesseract\Datafilter\Component\DataFilter;
  * @package TYPO3
  * @subpackage tx_datafilter
  */
-interface PostprocessEmptyFilterCheckInterface {
-	/**
-	 * This method must be implemented for post-processing the empty filter check.
-	 *
-	 * It receives the current status of the check and a reference to the complete filter object.
-	 *
-	 * @param boolean $isEmpty Current value of the is filter empty flag
-	 * @param DataFilter $filter The calling filter object
-	 * @return boolean
-	 */
-	public function postprocessEmptyFilterCheck($isEmpty, DataFilter $filter);
+interface PostprocessEmptyFilterCheckInterface
+{
+    /**
+     * This method must be implemented for post-processing the empty filter check.
+     *
+     * It receives the current status of the check and a reference to the complete filter object.
+     *
+     * @param boolean $isEmpty Current value of the is filter empty flag
+     * @param DataFilter $filter The calling filter object
+     * @return boolean
+     */
+    public function postprocessEmptyFilterCheck($isEmpty, DataFilter $filter);
 }
