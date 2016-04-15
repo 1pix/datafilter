@@ -5,7 +5,7 @@ if (!defined ('TYPO3_MODE')) {
 
 return array (
 	'ctrl' => array (
-		'title' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters',
+		'title' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters',
 		'label' => 'title',
 		'descriptionColumn' => 'description',
 		'tstamp' => 'tstamp',
@@ -36,7 +36,7 @@ return array (
 		),
 		'title' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.title',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.title',
 			'config' => array (
 				'type' => 'input',
 				'size' => '30',
@@ -45,7 +45,7 @@ return array (
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.description',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => '30',
@@ -54,7 +54,7 @@ return array (
 		),
 		'configuration' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.configuration',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.configuration',
 			'config' => array (
 				'type' => 'text',
 				'cols' => '30',
@@ -63,19 +63,19 @@ return array (
 		),
 		'logical_operator' => array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.logical_operator',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.logical_operator',
 			'config' => array (
 				'type' => 'radio',
 				'default' => 'AND',
 				'items' => array (
-					array('LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.logical_operator.I.0', 'AND'),
-					array('LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.logical_operator.I.1', 'OR'),
+					array('LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.logical_operator.I.0', 'AND'),
+					array('LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.logical_operator.I.1', 'OR'),
 				),
 			)
 		),
 		'orderby' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.orderby',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.orderby',
 			'config' => array (
 				'type' => 'text',
 				'cols' => '30',
@@ -84,7 +84,7 @@ return array (
 		),
 		'limit_start' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.limit_start',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.limit_start',
 			'config' => array (
 				'type' => 'input',
 				'size' => '30',
@@ -93,7 +93,7 @@ return array (
 		),
 		'limit_offset' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.limit_offset',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.limit_offset',
 			'config' => array (
 				'type' => 'input',
 				'size' => '30',
@@ -102,7 +102,7 @@ return array (
 		),
 		'limit_pointer' => array (
 			'exclude' => 0,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.limit_pointer',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.limit_pointer',
 			'config' => array (
 				'type' => 'input',
 				'size' => '30',
@@ -111,7 +111,7 @@ return array (
 		),
 		'session_key' => array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.session_key',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.session_key',
 			'config' => array (
 				'type' => 'input',
 				'size' => '20',
@@ -121,7 +121,7 @@ return array (
 		),
 		'key_per_page' => array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.key_per_page',
+			'label' => 'LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.key_per_page',
 			'config'  => array (
 				'type'    => 'check',
 				'default' => '0'
@@ -129,7 +129,7 @@ return array (
 		),
 	),
 	'types' => array (
-		'0' => array('showitem' => 'hidden, title;;4, configuration;;1, orderby, --palette--;LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.pagination;2,--div--;LLL:EXT:datafilter/locallang_db.xml:tx_datafilter_filters.session, session_key;;3')
+		'0' => array('showitem' => 'hidden, title;;4, configuration;;1, orderby, --palette--;LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.pagination;2,--div--;LLL:EXT:datafilter/Resources/Private/Language/locallang_db.xlf:tx_datafilter_filters.session, session_key;;3')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => 'logical_operator'),

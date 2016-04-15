@@ -19,7 +19,7 @@ $iconRegistry->registerIcon(
 // Add context sensitive help (csh) for this table
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
 	'tx_datafilter_filters',
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY, 'locallang_csh_txdatafilterfilters.xml')
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY, 'Resources/Private/Language/locallang_csh_txdatafilterfilters.xlf')
 );
 
 // Register datafilter as a Data Filter

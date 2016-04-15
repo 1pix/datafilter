@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-04-15T13:31:10Z" product-name="datafilter">
+		<header/>
+		<body>
+			<trans-unit id=".alttitle" xml:space="preserve">
+				<source>Data Filters</source>
+			</trans-unit>
+			<trans-unit id=".description" xml:space="preserve">
+				<source>Data Filters are a tool designed to retrieve values from a variety of sources and pass them to a Data Provider within the Tesseract framework</source>
+			</trans-unit>
+			<trans-unit id=".syntax" xml:space="preserve">
+				<source>
+				Data Filters use a syntax that is close to the one used by the getText function of standard TypoScript.
+				It is used to retrieve values that are passed on to a Data Provider, in order to filter, limit and order the data retrieved by the Data Provider.
+			</source>
+			</trans-unit>
+			<trans-unit id="hidden.alttitle" xml:space="preserve">
+				<source>Hide</source>
+			</trans-unit>
+			<trans-unit id="hidden.description" xml:space="preserve">
+				<source>This field is not actively used inside Tesseract.</source>
+			</trans-unit>
+			<trans-unit id="hidden.details" xml:space="preserve">
+				<source>
+				This field is not considered by the existing components of Tesseract. It could be used to give a visual indication of an obsolete filter.
+				May be used actively in the future or remove altogether.
+			</source>
+			</trans-unit>
+			<trans-unit id="title.alttitle" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="title.description" xml:space="preserve">
+				<source>Some significant name or label for the filter.</source>
+			</trans-unit>
+			<trans-unit id="configuration.alttitle" xml:space="preserve">
+				<source>Filter configuration</source>
+			</trans-unit>
+			<trans-unit id="configuration.description" xml:space="preserve">
+				<source>This is where the filter is defined.</source>
+			</trans-unit>
+			<trans-unit id="configuration.syntax" xml:space="preserve">
+				<source>
+				Each line in the filter configurtaion field represents one condition. The syntax is the following:
+
+					[tag ::] name_of_item_to_test = [key :] value
+
+				The tag is used when a filter is stored into session memory, to retrieve its value. This part is optional.
+				The next part must match the name of the item that is going to be tested for the value. For example, in the case the filter is injected into a SQL query, the name of the item will be something like: tablename.tablefield.
+				After the equals (=) sign (or some other operator) there can be either a simple value (a number or a string) or an expression that will be parsed (refer to the &quot;Expressions&quot; manual for more details on expressions).
+			</source>
+			</trans-unit>
+			<trans-unit id="configuration.details" xml:space="preserve">
+				<source>
+				Here are some example configurations (the explanations assume the filters are used in SQL queries on typical TYPO3 tables):
+
+					tt_content.cruser_id = 2
+					&lt;em&gt;Content elements created by BE user with uid = 2&lt;/em&gt;
+
+					pages.uid = [10,50]
+					&lt;em&gt;Pages whose uid is between 10 and 50 (inclusive)&lt;/em&gt;
+
+					tt_content.header like gp:search // clear_cache
+					&lt;em&gt;Content elements whose header contains some search string passed as GET/POST parameter. Plus clear the cache for that particular filter configuration.&lt;/em&gt;
+
+					pages.starttime &gt; date:U
+					&lt;em&gt;Pages whose starttime is greater than now&lt;/em&gt;
+
+					pages.crdate &gt;= {gp:year-&gt;intval // date:Y}-01-01-&gt;strtotime
+					&lt;em&gt;Pages whose creation date is greater than or equals to the Jan 1st on a year given by a GET/POST variable called &quot;year&quot; (cast to integer; defaults to current year if GET/POST variable is not defined). &lt;/em&gt;
+			</source>
+			</trans-unit>
+			<trans-unit id="logical_operator.alttitle" xml:space="preserve">
+				<source>Logical operator</source>
+			</trans-unit>
+			<trans-unit id="logical_operator.description" xml:space="preserve">
+				<source>Logical operator to be used between each condition defined in the filter.</source>
+			</trans-unit>
+			<trans-unit id="orderby.alttitle" xml:space="preserve">
+				<source>Ordering configuration</source>
+			</trans-unit>
+			<trans-unit id="orderby.description" xml:space="preserve">
+				<source>Definition of ordering criteria (field and sorting direction) to be passed to the Data Provider.</source>
+			</trans-unit>
+			<trans-unit id="orderby.syntax" xml:space="preserve">
+				<source>
+				This field uses a the following syntax:
+
+					field = [key :] value
+					order = [key :] value
+
+				&quot;field&quot; is used to define which field will be used for ordering. If the filter is injected into a SQL query, the field will have a syntax like tablename.tablefield.
+				&quot;order&quot; is used to define in which order the data should be sorted. Accepted values are &quot;asc&quot; or &quot;desc&quot;. If order is not defined, &quot;asc&quot; will be assumed.
+				After the equals (=) sign there can be either a simple value (a number or a string) or an expression that will be parsed (refer to the &quot;Expressions&quot; manual for more details on expressions).
+			</source>
+			</trans-unit>
+			<trans-unit id="orderby.details" xml:space="preserve">
+				<source>
+				Here's an example of ordering configuration:
+
+					field = vars:sort // pages.title
+					order = vars:order // asc
+					&lt;em&gt;The sorting field's is taken from a plugin variable called &quot;sort&quot;. It defaults to &quot;pages.title&quot; if that variable is not defined. The same for the order, taken from a variable called &quot;order&quot; and which defaults to &quot;asc&quot;.&lt;/em&gt;
+			</source>
+			</trans-unit>
+			<trans-unit id="limit_start.alttitle" xml:space="preserve">
+				<source>Items per page</source>
+			</trans-unit>
+			<trans-unit id="limit_start.description" xml:space="preserve">
+				<source>Number of items to display at a time.</source>
+			</trans-unit>
+			<trans-unit id="limit_start.details" xml:space="preserve">
+				<source>Either a simple value or an expression (see &quot;Expressions&quot; manual) can be used.</source>
+			</trans-unit>
+			<trans-unit id="limit_offset.alttitle" xml:space="preserve">
+				<source>Start at page</source>
+			</trans-unit>
+			<trans-unit id="limit_offset.description" xml:space="preserve">
+				<source>When results are paginated, which page to start.</source>
+			</trans-unit>
+			<trans-unit id="limit_offset.details" xml:space="preserve">
+				<source>Either a simple value or an expression (see &quot;Expressions&quot; manual) can be used.</source>
+			</trans-unit>
+			<trans-unit id="limit_pointer.alttitle" xml:space="preserve">
+				<source>Start at item</source>
+			</trans-unit>
+			<trans-unit id="limit_pointer.description" xml:space="preserve">
+				<source>Number of the item to start the display at.</source>
+			</trans-unit>
+			<trans-unit id="limit_pointer.details" xml:space="preserve">
+				<source>Either a simple value or an expression (see &quot;Expressions&quot; manual) can be used.</source>
+			</trans-unit>
+			<trans-unit id="session_key.alttitle" xml:space="preserve">
+				<source>Key for storage</source>
+			</trans-unit>
+			<trans-unit id="session_key.description" xml:space="preserve">
+				<source>Name to use for storing the filter into session memory.</source>
+			</trans-unit>
+			<trans-unit id="session_key.details" xml:space="preserve">
+				<source>
+				This must be a simple string. As soon as this field is not empty, the filter is stored into session.
+				The implication if that if a visitor comes back to the same page or some other page containing Tesseract elements refering to that stored filter, previously entered values will be preserved.
+			</source>
+			</trans-unit>
+			<trans-unit id="key_per_page.alttitle" xml:space="preserve">
+				<source>Limit to page</source>
+			</trans-unit>
+			<trans-unit id="key_per_page.description" xml:space="preserve">
+				<source>Check this box to restrict session storage mechanism to current page only.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

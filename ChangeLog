@@ -1,6 +1,7 @@
 2016-04-15 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Applied PSR-2 and other code cleanups, resolves #75667
+	* Moved language files to XLIFF, resolves #75668
 
 2015-09-27 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
