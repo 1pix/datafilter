@@ -4,10 +4,10 @@
 
 ---
 conf.py:
-  copyright: 2007-2015
+  copyright: 2007-2016
   project: Data Filter
-  version: 1.8
-  release: 1.8.2
+  version: 2.0
+  release: 2.0.0
   latex_documents:
   - - Index
     - datafilter.tex

@@ -19,7 +19,8 @@
 	"version": "2.0.0",
 	"require": {
 		"typo3/cms-core": ">=7.6.0,<8.0",
-		"tesseract/tesseract": ">=2.0.0"
+		"tesseract/tesseract": ">=2.0.0",
+		"cobweb/expressions": ">=2.0.0"
 	},
 	"replace": {
 		"datafilter": "self.version",
