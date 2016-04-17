@@ -1,3 +1,7 @@
+2016-04-17 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Fixed failing unit tests, resolves #75719
+
 2016-04-15 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Applied PSR-2 and other code cleanups, resolves #75667

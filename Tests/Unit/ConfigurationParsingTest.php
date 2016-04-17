@@ -1,5 +1,5 @@
 <?php
-namespace Cobweb\Context\Tests\Unit;
+namespace Cobweb\DataFilter\Tests\Unit;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -28,6 +28,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class ConfigurationParsingTest extends UnitTestCase
 {
+    /**
+     * @var array List of globals to exclude (contain closures which cannot be serialized)
+     */
+    protected $backupGlobalsBlacklist = array('TYPO3_LOADED_EXT', 'TYPO3_CONF_VARS');
+
     /**
      * Forces some GET variables for testing.
      *
