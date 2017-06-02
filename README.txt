@@ -1,1 +1,0 @@
-Create complex Data Filters for use with the Tesseract Project. Refer to the manual for more details.

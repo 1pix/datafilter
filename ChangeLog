@@ -1,3 +1,7 @@
+2017-06-02 Francois Suter (Cobweb)  <typo3@cobweb.ch>
+
+	* Verified compatibility with TYPO3 CMS 8
+
 2016-04-17 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Fixed failing unit tests, resolves #75719

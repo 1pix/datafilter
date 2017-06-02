@@ -435,7 +435,7 @@ class ConfigurationParsingTest extends UnitTestCase
     /**
      * Tests the parsing of various filters.
      *
-     * @param string $definition The raw filter definition
+     * @param array $definition The raw filter definition
      * @param array $result The expected structure of the parsed filter
      * @test
      * @dataProvider configurationProvider

@@ -97,7 +97,7 @@ class DataFilter extends FilterBase
     {
         // If a session key has been set and TYPO3 is running in FE mode,
         // save the filter in session
-        if (!empty($this->filterData['session_key']) && TYPO3_MODE === 'FE') {
+        if (TYPO3_MODE === 'FE' && !empty($this->filterData['session_key'])) {
             // Assemble the key for session storage
             // It is either a general key name or a key name per page (with page id appended)
             if (empty($this->filterData['key_per_page'])) {
@@ -151,7 +151,7 @@ class DataFilter extends FilterBase
                 $field = array_pop($fullFieldParts);
                 // If there's only one part left, it may be either a special keyword
                 // or a table's name
-                if (count($fullFieldParts) == 1) {
+                if (count($fullFieldParts) === 1) {
                     $part = array_pop($fullFieldParts);
                     if ($part === 'main') {
                         $mainFlag = true;
@@ -238,7 +238,7 @@ class DataFilter extends FilterBase
                         $matches = array();
                         $matching = preg_match_all('/([\[\]])([^,]*),(\w*)([\[\]])/', $value, $matches);
                         // If the expression has matched, we have an interval
-                        if ($matching == 1) {
+                        if ($matching === 1) {
                             $openingBracket = $matches[1][0];
                             $lowerBoundary = $matches[2][0];
                             $upperBoundary = $matches[3][0];
@@ -421,7 +421,7 @@ class DataFilter extends FilterBase
             do {
 
                 // If we don't have a configuration yet, the only acceptable type is "field"
-                if (count($configurations) == 0 && $items[$lineCounter]['type'] !== 'field') {
+                if ($items[$lineCounter]['type'] !== 'field' && count($configurations) === 0) {
                     $parseErrors[] = 'Expected "field" property on line: ' . htmlspecialchars(implode(' ',
                                     $items[$lineCounter]));
 
@@ -492,7 +492,7 @@ class DataFilter extends FilterBase
      * @param string $table Name of the table the filter applies to
      * @param string $field Name of the field the filter applies to
      * @param string $operator The operator of the condition
-     * @param string $value The value of the condition
+     * @param mixed $value The value of the condition
      * @param bool $negate TRUE if the operator is negated, FALSE otherwise
      * @return void
      */

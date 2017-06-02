@@ -27,7 +27,7 @@ Standard Data Filter
 		  tesseract, filter, data filter
 
 	:Copyright:
-		  2007-2015
+		  2007-2017
 
 	:Author:
 		  François Suter (Cobweb)
